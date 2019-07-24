@@ -41,6 +41,7 @@ class App extends React.Component {
           isPlaying={this.isPlaying}
         />
         <br />
+        {this.mostrarJugador()}
         {this.mostrarGanador()}
 
         {/* <input type="button" onClick={this.addColumn} value="Add Column" />
@@ -165,6 +166,34 @@ class App extends React.Component {
   mostrarGanador() {
     if (this.state.alguienGano) {
       return <h1> El ganador es el jugador {this.state.ganador}</h1>;
+    }
+  }
+
+  mostrarJugador() {
+    if (this.state.alguienGano === false) {
+      if (this.state.playerX === false) {
+        return (
+          <div>
+            <img src={" ' " + this.state.fillings[2] + " ' "} />
+            <h2>juega player O</h2>
+          </div>
+        );
+      } else if (this.state.playerX === true) {
+        return (
+          <div>
+            <img src={" ' " + this.state.fillings[1] + " ' "} />
+            <h2>juega player x</h2>
+          </div>
+        );
+      }
+    } else if (this.state.alguienGano === true) {
+    }
+  }
+
+  proximaPartida(){
+    if (this.state.alguienGano === true){
+      return <button onCLick={}>proxima partida</button>
+      
     }
   }
 
