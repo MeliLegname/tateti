@@ -1,6 +1,7 @@
 import React from "react";
 import "./style/App.css";
 import Board from "./components/Board.js";
+import Navbar from "./components/Navbar.js";
 import x from "../src/x.png";
 import o from "../src/o.png";
 // import React, { Component } from "react";
@@ -41,8 +42,10 @@ class App extends React.Component {
           isPlaying={this.isPlaying}
         />
         <br />
-        {this.mostrarJugador()}
+        <Navbar quienJuega={this.mostrarJugador} />
+        {/* {this.mostrarJugador()} */}
         {this.mostrarGanador()}
+        {this.btnProximaPartida()}
 
         {/* <input type="button" onClick={this.addColumn} value="Add Column" />
         <input type="button" onClick={this.addRow} value="Add Row" /> */}
@@ -174,15 +177,15 @@ class App extends React.Component {
       if (this.state.playerX === false) {
         return (
           <div>
-            <img src={" ' " + this.state.fillings[2] + " ' "} />
-            <h2>juega player O</h2>
+            <h2>juega player</h2>
+            <img className="quienJuega" src={this.state.fillings[2]} />
           </div>
         );
       } else if (this.state.playerX === true) {
         return (
           <div>
-            <img src={" ' " + this.state.fillings[1] + " ' "} />
-            <h2>juega player x</h2>
+            <h2>juega player</h2>
+            <img className="quienJuega" src={this.state.fillings[1]} />
           </div>
         );
       }
@@ -190,11 +193,21 @@ class App extends React.Component {
     }
   }
 
-  proximaPartida(){
-    if (this.state.alguienGano === true){
-      return <button onCLick={}>proxima partida</button>
-      
+  btnProximaPartida() {
+    if (this.state.alguienGano === true) {
+      return (
+        <button onClick={this.proximaPartida(console.log("quien es el ganador" + this.state.ganador))}>
+          {" "}
+          proxima partida
+        </button>
+      );
     }
+  }
+  proximaPartida() {
+    if (this.state.alguienGano) {
+    }
+
+    console.log(this.state.ganador);
   }
 
   addColumn() {

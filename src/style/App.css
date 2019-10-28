@@ -7,6 +7,11 @@
 
   height: 100vh;
 }
+.navbar {
+  background-color: red;
+  max-height: 1.5em;
+  min-width: 100vw;
+}
 
 .Board {
   margin-top: 10vh;
@@ -45,6 +50,9 @@
   animation-iteration-count: infinite;
   background-color: rgb(255, 180, 67);
   box-shadow: 5px 10px 8px rgb(175, 175, 175);
+}
+.quienJuega {
+  max-width: 15px;
 }
 
 @keyframes hover-animation {
